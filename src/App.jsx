@@ -46,7 +46,7 @@ function App() {
       const name = isInput.trim().toUpperCase();
       setDisplayName(isInput.charAt(0).toUpperCase() + isInput.slice(1).toLowerCase());
       const result = [];
-
+      handleClick();
       for (const char of name) {
         if (/[A-Z]/.test(char)) {
           const lines = poemData[char];
@@ -61,9 +61,10 @@ function App() {
 
       setPoemLines(result);
       setIsEntered(true);
-      setIsInput(name)
-      setIsInput('')
-      e.target.blur()
+      setIsIconClicked(true);
+      setIsInput(name);
+      setIsInput('');
+      e.target.blur();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -98,20 +99,21 @@ useEffect (()=>{
 
 
   const [displayName , setDisplayName] = useState('');
+  const [isIconClickedd, setIsIconClicked] = useState(false);
 
   return (
     <div className={`${theme.bg} p-3 min-h-screen overflow: hidden;
 `}>
       <h2 className={`text-4xl font-bold ${theme.title}`}>Personalized <br/>Poetry</h2>
-      <img src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full border border-black'/>
+      <img src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full border border-black' onClick={() => setIsIconClicked(false)}/>
       <SparklesIcon onClick={handleClick} className='text-gray-900 h-7 align-text-top'/>
       <div>
         {isEntered ? (
           <div>
           <p className={`p-3 text-3xl font-bold ${theme.ptext}`}>{displayName}</p>
           {poemLines.map((item,index)=> (
-            <p key={index} className='text-gray-900'>
-            <span className={`font-bold ${theme.pline}`}>{item.letter}</span>
+            <p key={index} className='text-gray-900 p-2'>
+            <span className={`font-bold ${theme.pline}`}>{item.letter} → </span>
             {item.line}
           </p>
 
@@ -126,9 +128,11 @@ useEffect (()=>{
         }
         </div>
         <div className="flex items-center justify-center text-black p-7">
+          {isIconClickedd ? (<p></p>
+        ) : (
           <input
             type="text"
-            className="h-10 w-72 rounded-2xl bg-white p-2.5 text-center border"
+            className="h-10 w-64 rounded-2xl bg-white p-2.5 text-center border"
             placeholder="Enter the name"
             value ={isInput}
             onChange = {(e) => setIsInput(e.target.value)}
@@ -136,6 +140,10 @@ useEffect (()=>{
             onKeyDown={handleKeyDown}
             maxLength={15}
           />
+          
+        )
+        }
+          
         </div>      
     </div>
 
