@@ -108,8 +108,7 @@ function App() {
   const [isIconClickedd, setIsIconClicked] = useState(false);
 
   return (
-    <div className={`${theme.bg} p-3 min-h-screen overflow: hidden;
-`}>
+    <div className={`${theme.bg} p-3 min-h-screen  xl:w-screen  `}>
       <h2 className={`text-4xl font-bold ${theme.title}`}>Personalized <br />Poetry</h2>
       <img src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full border border-black' onClick={() => setIsIconClicked(false)} />
       <SparklesIcon onClick={handleClick} className='text-gray-900 h-7 align-text-top' />
