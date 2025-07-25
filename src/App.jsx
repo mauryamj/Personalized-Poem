@@ -111,7 +111,9 @@ function App() {
   const ref = useRef();
   const handleDownload =() => {
     if(ref.current === null) return;
-    toPng(ref.current)
+    toPng(ref.current,{
+      filter:(node) => !node.classList?.contains('no-export'),
+    })
     .then((dataUrl)=>{
       const link = document.createElement('a');
       link.download = 'personalized-image.png'
@@ -124,10 +126,10 @@ function App() {
   };
 
   return (
-    <div  >
-      <div className={`${theme.bg} p-3 h-screen  w-screen overflow-auto `}ref={ref}>
+    <div>
+      <div  className={`${theme.bg} p-3 h-screen  w-screen overflow-auto `} ref={ref}>
       <h2 className={`text-4xl font-bold ${theme.title}`}>Personalized <br />Poetry</h2>
-      <img src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full border border-black' onClick={() => setIsIconClicked(false)} />
+      <img src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full border border-black'/>
       <SparklesIcon onClick={handleClick} className='text-gray-900 h-7 align-text-top' />
       <div>
         {isEntered ? (
@@ -154,11 +156,9 @@ function App() {
         }
       </div>
       <div className="flex items-center justify-center text-black p-7">
-        {isIconClickedd ? (<p></p>
-        ) : (
           <input
             type="text"
-            className="h-10 w-64 rounded-2xl bg-white p-2.5 text-center border"
+            className="h-10 w-64 rounded-2xl bg-white p-2.5 text-center border no-export"
             placeholder="Enter the name"
             value={isInput}
             onChange={(e) => setIsInput(e.target.value)}
@@ -167,15 +167,6 @@ function App() {
             maxLength={15}
           />
 
-        )
-
-        }
-
-      </div>
-      <div className='flex justify-center'>
-        {isEntered ? <p></p> :
-          <p className='text-black max-w-60 font-bold text-center'>After the inputbar disappears, to make it reappear click on the top right Logo icon</p>
-        }
       </div>
       <div className='flex justify-center'>
         {isEntered ? <p></p> :
