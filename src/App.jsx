@@ -124,7 +124,9 @@ function App() {
         console.error("a problem ", err);
       });
   };
-
+  const message = 'I would like to partner with you'
+  const phone = '7620480588'
+const WALink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   return (
     <div>
       <div className={`${theme.bg} p-3 h-screen  w-screen overflow-auto `} ref={ref}>
@@ -146,7 +148,7 @@ function App() {
                 </p>
 
               ))}
-              <button className='fixed bottom-4 left-4 object-contain p-2 flex justify-center gap-2 bg-slate-800 cursor-pointer rounded-full border border-black' onClick={handleDownload}>download</button>
+              <button className='no-export fixed bottom-4 left-4 object-contain p-2 flex justify-center gap-2 text-white bg-slate-800 cursor-pointer rounded-full border border-black' onClick={handleDownload}>download</button>
 
             </div>
           ) : (
@@ -174,7 +176,7 @@ function App() {
           {isEntered ? <p></p> :
             <div>
               <p className='text-black max-w-60 text-xl font-bold text-center pt-9'>To get more personalized</p>
-              <button className=' object-contain p-2 bg-lime-200 text-black cursor-pointer rounded-full border border-black text-sm m-2' onClick={() => location = "https://www.instagram.com/direct/t/17845010538530114/"}>Partner with Us</button><br />
+              <button className=' object-contain p-2 bg-lime-200 text-black cursor-pointer rounded-full border border-black text-sm m-2' onClick={() => location = WALink}>Partner with Us</button><br />
               <button className=' p-2 bg-cyan-200 text-black cursor-pointer rounded-full border border-black text-sm'>personalized products</button>
 
             </div>
@@ -182,7 +184,7 @@ function App() {
         </div>
       </div>
       <div>
-        <button className='fixed bottom-4 right-4 object-contain p-2 flex justify-center gap-2 bg-slate-800 cursor-pointer rounded-full border border-black' onClick={() => location = "https://www.instagram.com/personalized.poetry_/?igsh=MW85azI0cnVhbmZvNA%3D%3D#"}><FaInstagram className='h-6' /> Follow Us</button>
+        <button className='fixed bottom-4 right-4 object-contain p-2 flex justify-center gap-2 bg-slate-800 cursor-pointer rounded-full border text-white border-black' onClick={() => location = "https://www.instagram.com/personalized.poetry_/?igsh=MW85azI0cnVhbmZvNA%3D%3D#"}><FaInstagram className='h-6' /> Follow Us</button>
 
       </div>
     </div>
