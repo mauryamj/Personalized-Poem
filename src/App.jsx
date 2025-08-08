@@ -126,51 +126,53 @@ function App() {
   };
   const message = 'I would like to partner with you'
   const phone = '7620480588'
-const WALink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  const WALink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   return (
     <div>
-      <div className={`${theme.bg} p-3 h-screen  w-screen overflow-auto `} ref={ref}>
-        <h2 className={`text-4xl font-bold ${theme.title}`}>Personalized <br />Poetry</h2>
-        <img src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full border border-black' />
+      <div className={`${theme.bg} p-3 h-screen w-screen overflow-auto `} ref={ref}>
+        <h2 className={`text-4xl font-bold ${theme.title}`}>Personalized <br className='xl:hidden'/>Poetry</h2>
+        <img src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full animate-spin border border-black' />
         <SparklesIcon onClick={handleClick} className='text-gray-900 h-7 align-text-top' />
-        <div>
-          {isEntered ? (
-            <div>
-              <p className={`p-3 text-3xl font-bold ${theme.ntitle}`}>{displayName}</p>
-              {poemLines.map((item, index) => (
-                <p key={index} className="pl-7 text-base relative mb-3">
-                  <span className={`absolute left-0 top-0 font-bold ${theme.pline}`}>
-                    {item.letter} →
-                  </span>
-                  <span className={`ml-2 ${theme.ptext}`}>
-                    {item.line}
-                  </span>
-                </p>
+        <div className='xl:flex xl:flex-wrap xl:gap-5 xl:pl-10'>
+          <div>
+            {isEntered ? (
+              <div className=''>
+                <p className={`p-3 text-3xl font-bold xl:text-5xl ${theme.ntitle}`}>{displayName}</p>
+                {poemLines.map((item, index) => (
+                  <p key={index} className="pl-7 text-base xl:text-2xl relative mb-3">
+                    <span className={`absolute left-0 top-0 font-bold ${theme.pline}`}>
+                      {item.letter} →
+                    </span>
+                    <span className={` xl:pl-10 ml-2 ${theme.ptext}`}>
+                      {item.line}
+                    </span>
+                  </p>
 
-              ))}
-              <button className='no-export fixed bottom-4 left-4 object-contain p-2 flex justify-center gap-2 text-white bg-slate-800 cursor-pointer rounded-full border border-black' onClick={handleDownload}>download</button>
+                ))}
+                <button className='no-export fixed bottom-4 left-4 object-contain p-2 flex justify-center gap-2 text-white bg-slate-800 cursor-pointer rounded-full border border-black' onClick={handleDownload}>download</button>
 
-            </div>
-          ) : (
-            <p className="p-3 text-2xl font-bold text-gray-900">
-              Welcome to this page. <span className={`${theme.pline}`}>Search for your name </span>
-            </p>
+              </div>
+            ) : (
+              <p className="p-3 xl:text-5xl text-2xl xl:pt-40 font-bold text-gray-900">
+                Welcome to this page. <span className={`${theme.pline}`}><br />Search for your name </span>
+              </p>
 
-          )
-          }
-        </div>
-        <div className="flex items-center justify-center text-black p-7">
-          <input
-            type="text"
-            className="h-10 w-64 rounded-2xl bg-white p-2.5 text-center border no-export"
-            placeholder="Enter the name"
-            value={isInput}
-            onChange={(e) => setIsInput(e.target.value)}
+            )
+            }
+          </div>
+          <div className="flex items-center justify-center text-black p-7 xl:p-40">
+            <input
+              type="text"
+              className="h-10 w-64 rounded-2xl bg-white p-2.5 text-center border no-export "
+              placeholder="Enter the name"
+              value={isInput}
+              onChange={(e) => setIsInput(e.target.value)}
 
-            onKeyDown={handleKeyDown}
-            maxLength={15}
-          />
+              onKeyDown={handleKeyDown}
+              maxLength={15}
+            />
 
+          </div>
         </div>
         <div className='flex justify-center'>
           {isEntered ? <p></p> :
