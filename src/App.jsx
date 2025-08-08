@@ -3,7 +3,7 @@ import './App.css';
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import { FaInstagram } from 'react-icons/fa';
 import { toPng } from 'html-to-image';
-
+import { motion } from 'framer-motion';
 function App() {
   const [count, setCount] = useState(0);
 
@@ -124,20 +124,41 @@ function App() {
         console.error("a problem ", err);
       });
   };
-  const message = 'I would like to partner with you'
-  const phone = '7620480588'
-  const WALink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   return (
-    <div>
+    <div className=''>
       <div className={`${theme.bg} p-3 h-screen w-screen overflow-auto `} ref={ref}>
-        <h2 className={`text-4xl font-bold ${theme.title}`}>Personalized <br className='xl:hidden'/>Poetry</h2>
-        <img src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full animate-spin border border-black' />
-        <SparklesIcon onClick={handleClick} className='text-gray-900 h-7 align-text-top' />
-        <div className='xl:flex xl:flex-wrap xl:gap-5 xl:pl-10'>
+        <motion.h2 className={`text-4xl font-bold ${theme.title}`}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >Personalized <br className='xl:hidden' />Poetry</motion.h2>
+        <motion.img
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full animate-spin border border-black' />
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 50 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <SparklesIcon onClick={handleClick} className='text-gray-900 h-7 align-text-top' /></motion.div>
+        <div className='xl:flex xl:flex-wrap xl:gap-5 xl:pl-10 '>
           <div>
             {isEntered ? (
               <div className=''>
-                <p className={`p-3 text-3xl font-bold xl:text-5xl ${theme.ntitle}`}>{displayName}</p>
+                <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                <p
+                  
+                  className={`p-3 text-3xl font-bold xl:text-5xl ${theme.ntitle}`}>{displayName}</p>
                 {poemLines.map((item, index) => (
                   <p key={index} className="pl-7 text-base xl:text-2xl relative mb-3">
                     <span className={`absolute left-0 top-0 font-bold ${theme.pline}`}>
@@ -147,20 +168,36 @@ function App() {
                       {item.line}
                     </span>
                   </p>
+                  
 
-                ))}
-                <button className='no-export fixed bottom-4 left-4 object-contain p-2 flex justify-center gap-2 text-white bg-slate-800 cursor-pointer rounded-full border border-black' onClick={handleDownload}>download</button>
+                ))}</motion.div>
+                <motion.button
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className='no-export fixed bottom-4 left-4 object-contain p-2 flex justify-center gap-2 text-white bg-slate-800 cursor-pointer rounded-full border border-black active:bg-blue-600  hover:text-black hover:bg-white' onClick={handleDownload}>download</motion.button>
 
               </div>
             ) : (
-              <p className="p-3 xl:text-5xl text-2xl xl:pt-40 font-bold text-gray-900">
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="p-3 xl:text-5xl text-2xl xl:pt-40 font-bold text-gray-900">
                 Welcome to this page. <span className={`${theme.pline}`}><br />Search for your name </span>
-              </p>
+              </motion.p>
 
             )
             }
           </div>
-          <div className="flex items-center justify-center text-black p-7 xl:p-40">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="fixed flex items-center justify-center  text-black p-7 xl:pt-40 xl:right-96">
             <input
               type="text"
               className="h-10 w-64 rounded-2xl bg-white p-2.5 text-center border no-export "
@@ -172,23 +209,40 @@ function App() {
               maxLength={15}
             />
 
-          </div>
+          </motion.div>
         </div>
         <div className='flex justify-center'>
           {isEntered ? <p></p> :
             <div>
-              <p className='text-black max-w-60 text-xl font-bold text-center pt-9'>To get more personalized</p>
-              <button className=' object-contain p-2 bg-lime-200 text-black cursor-pointer rounded-full border border-black text-sm m-2' onClick={() => location = WALink}>Partner with Us</button><br />
-              <button className=' p-2 bg-cyan-200 text-black cursor-pointer rounded-full border border-black text-sm'>personalized products</button>
+              <motion.p
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className=' p-2  text-red-700 font-bold text-4xl text-center pt-32 m-5'>Personalized Merchandise</motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className=' p-2 text-green-700 font-bold text-4xl m-5  pt-10 text-center'>Partner With <br className='xl:hidden' /> Us</motion.p><br />
 
             </div>
           }
         </div>
       </div>
-      <div>
-        <button className='fixed bottom-4 right-4 object-contain p-2 flex justify-center gap-2 bg-slate-800 cursor-pointer rounded-full border text-white border-black' onClick={() => location = "https://www.instagram.com/personalized.poetry_/?igsh=MW85azI0cnVhbmZvNA%3D%3D#"}><FaInstagram className='h-6' /> Follow Us</button>
+      <motion.div
+        className='absolute'
+      >
+        <motion.button
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className='fixed bottom-4 right-4 object-contain p-2 flex justify-center gap-2 bg-slate-800 cursor-pointer rounded-full border text-white border-black active:bg-blue-600  hover:text-black hover:bg-white' onClick={() => location = "https://www.instagram.com/personalized.poetry_/?igsh=MW85azI0cnVhbmZvNA%3D%3D#"}><FaInstagram className='h-6' /> Follow Us</motion.button>
 
-      </div>
+      </motion.div>
     </div>
 
   )
