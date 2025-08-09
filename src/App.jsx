@@ -138,7 +138,7 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full animate-spin border border-black' />
+          src='/logo.png' className='h-16 fixed top-4 right-4 object-contain cursor-pointer rounded-full border border-black' />
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
