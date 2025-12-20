@@ -1,314 +1,574 @@
 {
-  "A": [
-    "An absolute joy to be around, always.",
-    "Authentic and true, a smile that lights the space.",
-    "Always finding a way to make others feel included.",
-    "Ambitious and inspiring, you motivate those around you.",
-    "Admirable in your strength and resilience.",
-    "Astute and insightful, you see things others miss.",
-    "An amazing friend and an even better person.",
-    "Appreciated more than you could possibly know.",
-    "Artistic in your view of the world.",
-    "Adventurous spirit, ready for any challenge."
-  ],
-  "B": [
-    "Bringing joy and laughter wherever you go.",
-    "Bold in spirit, gentle in tone.",
-    "Brilliant ideas seem to flow from you effortlessly.",
-    "Brave enough to stand up for what is right.",
-    "Beautiful, both on the inside and the out.",
-    "Bubbly personality that is absolutely infectious.",
-    "Beacon of positivity in a sometimes-dark world.",
-    "Boundless in your capacity for kindness.",
-    "Benevolent and big-hearted in all your actions.",
-    "Balanced in your views and fair in your judgments."
-  ],
-  "C": [
-    "Caring heart, filled with an incredible light.",
-    "Creating peace and harmony with every stride.",
-    "Consistently thoughtful and incredibly kind.",
-    "Courageous in the face of any and all adversity.",
-    "Creativity that knows no limits.",
-    "Calming presence, even in the middle of a storm.",
-    "Charming and charismatic in the most genuine way.",
-    "Compassionate towards every person you meet.",
-    "Clever wit that's both sharp and good-natured.",
-    "Confident in who you are, inspiring others to be the same."
-  ],
-  "D": [
-    "Daring to dream big and chase those stars.",
-    "Determined spirit that can overcome anything.",
-    "Dedicated to the people and passions you love.",
-    "Dynamic personality that draws people in.",
-    "Deeply intuitive and understanding.",
-    "Dependable and trustworthy to your very core.",
-    "Deftly making difficult things look easy.",
-    "Delightful presence in any room.",
-    "Driven to make a positive impact on the world.",
-    "Disarmingly honest and incredibly refreshing."
-  ],
-  "E": [
-    "Effortlessly kind and exceptionally brilliant.",
-    "Energetic in a way that is infectious and uplifting.",
-    "Empathetic soul who truly listens to others.",
-    "Elegant in your actions and your words.",
-    "Enthusiasm that could power a city.",
-    "Encouraging to everyone, helping them see their best.",
-    "Ethical and principled, a true moral compass.",
-    "Excellent sense of humor that lights up any conversation.",
-    "Endlessly fascinating and wonderful to talk to.",
-    "Exemplary in your dedication and hard work."
-  ],
-  "F": [
-    "Fiercely loyal to the people you love.",
-    "Funny in a way that makes everyone feel good.",
-    "Full of wisdom and wonderful advice.",
-    "Flawless in your generosity and spirit.",
-    "Fantastic at making people feel welcome.",
-    "Focused and driven when it comes to your goals.",
-    "Flexible and able to adapt to any situation.",
-    "Fearless advocate for what you believe in.",
-    "Friendship with you is a true and precious gift.",
-    "Forever finding the silver lining."
-  ],
-  "G": [
-    "Genuinely one of the kindest people I've ever met.",
-    "Graceful under pressure, strong and serene.",
-    "Generous with your time, your spirit, and your heart.",
-    "Gifted with an incredible sense of intuition.",
-    "Great listener who makes people feel heard.",
-    "Greatness is evident in your inspiring growth and progress.",
-    "Gregarious and glowing, you light up a room.",
-    "Grounded and stable, a rock for many.",
-    "Good-hearted through and through.",
-    "Glorious laugh that is wonderfully contagious."
-  ],
-  "H": [
-    "Honest and honorable in all of your dealings.",
-    "Helpful without ever being asked.",
-    "Heartfelt and huge, your warmth is always felt.",
-    "Humble, despite your many incredible talents.",
-    "Hilarious and witty, you always make me laugh.",
-    "Harmonious presence that brings people together.",
-    "Hardworking and dedicated to your craft.",
-    "Hopeful and optimistic, you lift everyone's spirits.",
-    "Highly intelligent and wonderfully insightful.",
-    "Heroic in your own quiet, steady way."
-  ],
-  "I": [
-    "Incredibly thoughtful and considerate.",
-    "Inspiring others just by being yourself.",
-    "Impeccable integrity that serves as a guiding light.",
-    "Intelligent conversation with you is a true pleasure.",
-    "Ingenious in your approach to solving problems.",
-    "Intuitive in a way that is remarkably sharp and accurate.",
-    "Impeccable in your style and your character.",
-    "Influential in the most positive and uplifting way.",
-    "Independent spirit with a collaborative heart.",
-    "Imagination that is beautiful and wondrous."
-  ],
-  "J": [
-    "Joyfully genuine, a true gift in my life.",
-    "Jovial and lighthearted, you spread happiness easily.",
-    "Judgment that is always sound and fair.",
-    "Just being around you makes any day better.",
-    "Jewel of a friend, precious and rare.",
-    "Joining people together with your positive spirit.",
-    "Judicious in your decisions, wise in your counsel.",
-    "Justifying kindness in every situation.",
-    "Journeying with you is always an adventure.",
-    "Jubilant in spirit, celebrating life's small moments."
-  ],
-  "K": [
-    "Kindness that is your default setting.",
-    "Keen intellect and a sharp mind.",
-    "Keeping the secrets of others safe in your trust.",
-    "Key part of every team you're on.",
-    "Knowledgeable on so many interesting topics.",
-    "Knack for making people smile.",
-    "Kindling hope in the hearts of others.",
-    "Kindhearted nature that is a gift to the world.",
-    "Keeper of promises and a true friend.",
-    "Key to unlocking the potential in those around you."
-  ],
-  "L": [
-    "Loyal and loving, a friend through and through.",
-    "Listening with your whole heart, making others feel truly heard.",
-    "Leading by example, you inspire rather than command.",
-    "Laughter that sounds like the best kind of music.",
-    "Luminous, you shine from the inside out.",
-    "Level-headed and clear in any crisis.",
-    "Lighthearted, you never take things too seriously.",
-    "Limitless in your potential and your passion.",
-    "Likable to every single person you meet.",
-    "Living your life with an admirable sense of purpose."
-  ],
-  "M": [
-    "Magnificent in both spirit and action.",
-    "Making a meaningful difference in the world.",
-    "Motivating others to be their best selves.",
-    "Mindful and present in every moment.",
-    "Modest about your truly impressive achievements.",
-    "Merciful and forgiving, showing your great strength.",
-    "Meticulous in your work, a true professional.",
-    "Masterful communicator and a great friend.",
-    "Mature beyond your years, wise in your soul.",
-    "Magnetic personality that naturally draws people in."
-  ],
-  "N": [
-    "Naturally gifted at making people feel comfortable.",
-    "Noble in your character and your deeds.",
-    "Nurturing to all, helping them grow.",
-    "Necessary voice of reason and calm.",
-    "Navigating challenges with inspiring grace and skill.",
-    "Noteworthy for your kindness and integrity.",
-    "Never giving up on the people you care about.",
-    "Naturally gentle and reassuring in your nature.",
-    "Nexus of creativity and intelligence.",
-    "Noted for bringing a new and needed perspective."
-  ],
-  "O": [
-    "Outstanding in every way imaginable.",
-    "Open-hearted and welcoming to everyone.",
-    "Optimistic, you find the good in every situation.",
-    "Original thinker with a unique and fascinating worldview.",
-    "Organized and effective, you make things happen.",
-    "Offering the most insightful observations.",
-    "One of the most authentic people I know.",
-    "Outgoing and friendly, a stranger to no one.",
-    "Overcoming obstacles with admirable tenacity.",
-    "Orderly in your thoughts, clear in your speech."
-  ],
-  "P": [
-    "Patient and understanding, even when it's hard.",
-    "Passionate about the things that truly matter.",
-    "Peaceful presence that calms the soul.",
-    "Positivity that is a powerful and wonderful force.",
-    "Persistent and dedicated to achieving your dreams.",
-    "Polite and respectful to every single person.",
-    "Possessing a practical mind and a poetic heart.",
-    "Protective of your friends and loved ones.",
-    "Potential that is truly limitless.",
-    "Principled and full of unwavering integrity."
-  ],
-  "Q": [
-    "Quick-witted humor that is always perfectly timed.",
-    "Quintessence of grace and kindness.",
-    "Quality work and effort in everything you do.",
-    "Quietly confident, with no need for an audience.",
-    "Questioning and answering with equal insight.",
-    "Quelling anxieties with your calm demeanor.",
-    "Quintessentially one of the best people I know.",
-    "Quest for knowledge that is truly admirable.",
-    "Quite unique in your quality of making everyone feel important.",
-    "Quintessential friend: loyal, fun, and true."
-  ],
-  "R": [
-    "Reliable and responsible, you can always be counted on.",
-    "Resilient, you bounce back from anything.",
-    "Remarkable in your ability to connect with people.",
-    "Rational thinker with a compassionate heart.",
-    "Radiating warmth and genuine kindness.",
-    "Resourceful and clever, you can solve any problem.",
-    "Respectful of everyone's opinions and feelings.",
-    "Refreshing and honest in your unique perspective.",
-    "Rare combination of intelligence and humility.",
-    "Renewing spirits with your hopeful presence."
-  ],
-  "S": [
-    "Selfless and giving, always putting others first.",
-    "Smiling in a way that can brighten the darkest of days.",
-    "Strong in character, conviction, and spirit.",
-    "Sincere in every word you say and everything you do.",
-    "Soothing presence for any troubled mind.",
-    "Spectacularly talented in so many different ways.",
-    "Supportive and encouraging to everyone around you.",
-    "Spirited, wonderfully adventurous, and free.",
-    "Savvy and smart, you make excellent decisions.",
-    "Steadfast and loyal as a friend."
-  ],
-  "T": [
-    "Trustworthy to the absolute core.",
-    "Thoughtful in ways that constantly surprise and delight.",
-    "Tenacious and unstoppable when you set your mind to something.",
-    "Talented, but even more importantly, you work hard.",
-    "Tactful and diplomatic in sensitive situations.",
-    "Truly an inspiration to everyone who knows you.",
-    "Tolerant and accepting of all people.",
-    "Tranquil nature that is a gift to those around you.",
-    "Thorough in your work, you never miss a detail.",
-    "Terrific sense of humor that's wonderfully contagious."
-  ],
-  "U": [
-    "Unbelievably kind and generous.",
-    "Understanding and empathetic beyond measure.",
-    "Unique in the very best way possible.",
-    "Uplifting the spirits of everyone you meet.",
-    "Unwavering in your support for your friends.",
-    "Unflappable, you stay calm in any situation.",
-    "Unpretentious and completely down-to-earth.",
-    "Uncanny in your ability to know what people need.",
-    "Undisputed expert in your field.",
-    "Unselfish and always willing to share."
-  ],
-  "V": [
-    "Vibrant and full of life, you shine so brightly.",
-    "Valiant in the face of fear and uncertainty.",
-    "Voice of reason and compassion.",
-    "Visionary, you see possibilities where others see walls.",
-    "Valuable beyond measure as a friend and colleague.",
-    "Versatile and able to master many different skills.",
-    "Vivacious and energetic, a joy to be around.",
-    "Valuing your principles with admirable conviction.",
-    "Virtuous in character and action.",
-    "Viewing the world with a sense of wonder and awe."
-  ],
-  "W": [
-    "Wise beyond your years, a true old soul.",
-    "Warm-hearted and welcoming to all.",
-    "Witty and charming, you light up conversations.",
-    "Wonderful friend in every sense of the word.",
-    "Willing to go the extra mile for anyone.",
-    "Working hard and with great passion in all you do.",
-    "Wholesome and grounding presence.",
-    "Wildly and beautifully spirited.",
-    "Well-spoken and articulate in your thoughts.",
-    "Worthy of all the good things that come your way."
-  ],
-  "X": [
-    "X-factor personified, you are truly one-of-a-kind.",
-    "Xenial to your core, making everyone feel welcome.",
-    "X-traordinary in your kindness and spirit.",
-    "X-ceptional in your dedication and passion.",
-    "X marks the spot where your heart of gold resides.",
-    "X-emplifying grace under pressure.",
-    "Xylophone-like, you bring a happy tune to life's rhythm.",
-    "X-ray vision for seeing the good in all people.",
-    "Xenomorphic in your ability to adapt to any situation.",
-    "Xenodochial, you're a friend to everyone you meet."
-  ],
-  "Y": [
-    "Year-round source of sunshine.",
-    "Youthful spirit that is contagious.",
-    "Saying 'yes' to life and all its adventures.",
-    "Yardstick for what it means to be a true friend.",
-    "Yearning for knowledge and growth, which is admirable.",
-    "Yielding to others with grace and humility.",
-    "Your presence is a balm for a weary soul.",
-    "You bring out the very best in other people.",
-    "Uniquely and unapologetically you.",
-    "Your positive outlook is your superpower."
-  ],
-  "Z": [
-    "Zesty and full of a contagious love for life.",
-    "Zealous in your pursuit of your passions.",
-    "Zenith of kindness and integrity.",
-    "Zipping with energy, you liven up any room.",
-    "Zoning in on what's important with incredible focus.",
-    "Zeal for helping others that is truly inspiring.",
-    "Zero negativity found in your beautiful soul.",
-    "Zealously blazing a path for others to follow.",
-    "Zen-like in your calm, you are a source of peace for others.",
-    "Zestfully adding fun and flavor to an ordinary day."
-  ]
+  "A": {
+    "Creative": [
+      "Artistic vision that transforms the ordinary.",
+      "Always finding beauty in the abstract.",
+      "A creator of worlds with words and colors."
+    ],
+    "Explore": [
+      "Adventurous spirit, seeking new horizons.",
+      "Always ready for the next great journey.",
+      "A wanderer at heart, loving the unknown."
+    ],
+    "Loving": [
+      "An absolute joy to be around, always.",
+      "Always finding a way to make others feel included.",
+      "Affectionate and warm, a true friend."
+    ],
+    "Dreamer": [
+      "Ambitious dreams that reach for the stars.",
+      "Always believing in the impossible.",
+      "A visionary mind, seeing what could be."
+    ]
+  },
+  "B": {
+    "Creative": [
+      "Brilliant ideas flow from you effortlessly.",
+      "Building masterpieces from simple thoughts.",
+      "Boldly expressing your unique voice."
+    ],
+    "Explore": [
+      "Brave enough to chart your own path.",
+      "Bound for places mapped only in dreams.",
+      "Boldly going where others hesitate."
+    ],
+    "Loving": [
+      "Bringing joy and laughter wherever you go.",
+      "Benevolent and big-hearted in all actions.",
+      "Bestowing kindness on everyone you meet."
+    ],
+    "Dreamer": [
+      "Believing in a brighter, better future.",
+      "Building castles in the air and making them real.",
+      "Boundless imagination that knows no limits."
+    ]
+  },
+  "C": {
+    "Creative": [
+      "Creativity that knows no limits.",
+      "Crafting magic with your hands and heart.",
+      "Coloring the world with your imagination."
+    ],
+    "Explore": [
+      "Courageous in the face of new adventures.",
+      "Charting courses to undiscovered lands.",
+      "Curiosity that leads to amazing discoveries."
+    ],
+    "Loving": [
+      "Caring heart, filled with incredible light.",
+      "Compassionate towards every person you meet.",
+      "Comforting presence in times of need."
+    ],
+    "Dreamer": [
+      "Chasing sunsets and starlight.",
+      "Conjuring dreams that inspire us all.",
+      "Captivated by the wonders of the universe."
+    ]
+  },
+  "D": {
+    "Creative": [
+      "Designing a life that is truly your own.",
+      "Dancing to the rhythm of your own drum.",
+      "Drawing inspiration from everything around."
+    ],
+    "Explore": [
+      "Daring to discover what lies beyond.",
+      "Driven to explore every corner of the world.",
+      "Destined for great journeys."
+    ],
+    "Loving": [
+      "Deeply intuitive and understanding.",
+      "Devoted friend with a heart of gold.",
+      "Delightful presence that warms the room."
+    ],
+    "Dreamer": [
+      "Daring to dream big and chase the stars.",
+      "Drifting into worlds of endless possibility.",
+      "Determined to make your dreams reality."
+    ]
+  },
+  "E": {
+    "Creative": [
+      "Expressing yourself in beautiful ways.",
+      "Effortlessly creating art from life.",
+      "Envisioning beauty where others see nothing."
+    ],
+    "Explore": [
+      "Eager to experience everything life offers.",
+      "Embarking on adventures with a smile.",
+      "Exploring the edges of the map."
+    ],
+    "Loving": [
+      "Empathetic soul who truly listens.",
+      "Endlessly kind and generous.",
+      "Enveloping others in your warmth."
+    ],
+    "Dreamer": [
+      "Envisioning a world filled with hope.",
+      "Eyes always fixed on the horizon.",
+      "Expecting miracles and finding them."
+    ]
+  },
+  "F": {
+    "Creative": [
+      "Fashioning beauty out of chaos.",
+      "Finding inspiration in the smallest details.",
+      "Free-spirited artist of life."
+    ],
+    "Explore": [
+      "Fearless in your pursuit of the new.",
+      "Following paths that others miss.",
+      "Far-reaching travels feed your soul."
+    ],
+    "Loving": [
+      "Fiercely loyal to those you love.",
+      "Full of forgiveness and grace.",
+      "Friendship with you is a precious gift."
+    ],
+    "Dreamer": [
+      "Floating on clouds of imagination.",
+      "Fantasizing about a better tomorrow.",
+      "Faith in the unseen and the magical."
+    ]
+  },
+  "G": {
+    "Creative": [
+      "Gifted with a unique artistic voice.",
+      "Generating ideas that change the world.",
+      "Growing beauty in every garden you tend."
+    ],
+    "Explore": [
+      "Going places others only dream of.",
+      "Gallivanting across the globe with joy.",
+      "Guided by the stars and your heart."
+    ],
+    "Loving": [
+      "Genuinely one of the kindest souls.",
+      "Generous with your time and love.",
+      "Gentle spirit that heals others."
+    ],
+    "Dreamer": [
+      "Gazing at the stars and seeing friends.",
+      "Golden dreams fill your quiet moments.",
+      "Grasping for the infinite."
+    ]
+  },
+  "H": {
+    "Creative": [
+      "Harmonizing colors and sounds perfectly.",
+      "Handcrafting a life of beauty.",
+      "Highly imaginative and original."
+    ],
+    "Explore": [
+      "Hiking through life's great mysteries.",
+      "Hunting for hidden treasures in the world.",
+      "Heading towards the horizon always."
+    ],
+    "Loving": [
+      "Heartfelt warmth that touches everyone.",
+      "Helping others is your second nature.",
+      "Holding space for those in need."
+    ],
+    "Dreamer": [
+      "Hoping for the best in everything.",
+      "Harboring dreams of a magical future.",
+      "High-flying spirit that soars."
+    ]
+  },
+  "I": {
+    "Creative": [
+      "Inventive mind that never stops.",
+      "Imagination that is beautiful and wondrous.",
+      "Inspiring others with your creations."
+    ],
+    "Explore": [
+      "Intrepid traveler of the world.",
+      "Investigating the wonders of life.",
+      "Itinerant soul seeking new sights."
+    ],
+    "Loving": [
+      "Incredibly thoughtful and considerate.",
+      "Inclusive and welcoming to all.",
+      "Imbuing every interaction with love."
+    ],
+    "Dreamer": [
+      "Idealistic and full of hope.",
+      "Imagining a world of peace and joy.",
+      "Illuminating the dark with your dreams."
+    ]
+  },
+  "J": {
+    "Creative": [
+      "Jazzing up the mundane with your style.",
+      "Justifying art in every form.",
+      "Jeweler of words and ideas."
+    ],
+    "Explore": [
+      "Journeying with you is an adventure.",
+      "Jumping into new experiences feet first.",
+      "Jaunting across the world with glee."
+    ],
+    "Loving": [
+      "Joyfully genuine and kind.",
+      "Joining hearts with your warmth.",
+      "Just being you makes others happy."
+    ],
+    "Dreamer": [
+      "Just beginning to see your potential.",
+      "Joyous dreams fill your nights.",
+      "Jubilant spirit reaching for the sky."
+    ]
+  },
+  "K": {
+    "Creative": [
+      "Knitting together ideas in new ways.",
+      "Kaleidoscopic view of the world.",
+      "Keen eye for beauty and art."
+    ],
+    "Explore": [
+      "Kayaking through the rivers of life.",
+      "Keeping a lookout for the next adventure.",
+      "Knowing that the journey is the destination."
+    ],
+    "Loving": [
+      "Kindness is your default setting.",
+      "Keeping the secrets of friends safe.",
+      "Kindhearted nature that heals."
+    ],
+    "Dreamer": [
+      "Keeping your head in the clouds.",
+      "Kindling hope in the darkest times.",
+      "Knowing that anything is possible."
+    ]
+  },
+  "L": {
+    "Creative": [
+      "Lyrical soul with a poetic heart.",
+      "Painting life with light and love.",
+      "Limitless creativity flows from you."
+    ],
+    "Explore": [
+      "Looking for adventure around every corner.",
+      "Leaving no stone unturned.",
+      "Longing for the open road."
+    ],
+    "Loving": [
+      "Loyal and loving to the core.",
+      "Listening with your whole heart.",
+      "Lighting up the lives of others."
+    ],
+    "Dreamer": [
+      "Lost in a world of beautiful dreams.",
+      "Looking at the moon and seeing possibilities.",
+      "Living a life of wonder."
+    ]
+  },
+  "M": {
+    "Creative": [
+      "Making magic out of the mundane.",
+      "Masterful in your chosen craft.",
+      "Musical spirit that sings."
+    ],
+    "Explore": [
+      "Marching to the beat of your own drum.",
+      "Mapping out new territories.",
+      "Moving constantly towards the new."
+    ],
+    "Loving": [
+      "Magnanimous and forgiving.",
+      "Making everyone feel special.",
+      "Mothering/Fathering the world with care."
+    ],
+    "Dreamer": [
+      "Moonlight dancer in your dreams.",
+      "Manifesting your deepest desires.",
+      "Mystical connection to the universe."
+    ]
+  },
+  "N": {
+    "Creative": [
+      "Novel ideas spring from your mind.",
+      "Nurturing your artistic talents.",
+      "Noting the beauty in everything."
+    ],
+    "Explore": [
+      "Navigating life with curiosity.",
+      "Never stopping your search for truth.",
+      "Nomadic spirit at peace on the road."
+    ],
+    "Loving": [
+      "Nurturing to all who know you.",
+      "Nice in a way that is rare.",
+      "Never giving up on your loved ones."
+    ],
+    "Dreamer": [
+      "Noticing the magic in the air.",
+      "Never letting go of your dreams.",
+      "Navigating by the stars of hope."
+    ]
+  },
+  "O": {
+    "Creative": [
+      "Original thinker with unique views.",
+      "Orchestrating beauty in your life.",
+      "Outstanding artistic flair."
+    ],
+    "Explore": [
+      "Open to every new experience.",
+      "Outdoors is where you feel at home.",
+      "Over the hills and far away."
+    ],
+    "Loving": [
+      "Open-hearted and welcoming.",
+      "Offering love without condition.",
+      "Overflowing with kindness."
+    ],
+    "Dreamer": [
+      "Optimistic about the future.",
+      "Observing the world with wonder.",
+      "Only seeing the possibilities."
+    ]
+  },
+  "P": {
+    "Creative": [
+      "Painting your life with vibrant colors.",
+      "Poetic soul with a gentle voice.",
+      "Producing beauty in all you do."
+    ],
+    "Explore": [
+      "Pioneering new paths for others.",
+      "Pursuing adventure with passion.",
+      "Plunging into the unknown."
+    ],
+    "Loving": [
+      "Patient and understanding always.",
+      "Protective of those you love.",
+      "Peaceful presence that calms."
+    ],
+    "Dreamer": [
+      "Possibilities are endless to you.",
+      "Planning for a magical future.",
+      "Playing amongst the stars."
+    ]
+  },
+  "Q": {
+    "Creative": [
+      "Quirky and wonderfully unique.",
+      "Quick to find the creative solution.",
+      "Quietly crafting masterpieces."
+    ],
+    "Explore": [
+      "Questing for the truth and beauty.",
+      "Quick to start a new journey.",
+      "Quenching your thirst for travel."
+    ],
+    "Loving": [
+      "Quietly supporting everyone.",
+      "Quintessence of kindness.",
+      "Quelling fears with your love."
+    ],
+    "Dreamer": [
+      "Questioning what is and seeing what could be.",
+      "Quiet dreamer of big things.",
+      "Quixotic in the best way."
+    ]
+  },
+  "R": {
+    "Creative": [
+      "Radiating artistic energy.",
+      "Reshaping the world with your art.",
+      "Rhythmic soul that dances."
+    ],
+    "Explore": [
+      "Roaming the world with open eyes.",
+      "Ready for any adventure.",
+      "Running towards the horizon."
+    ],
+    "Loving": [
+      "Reliable and truly caring.",
+      "Respectful and kind to all.",
+      "Radiating warmth and love."
+    ],
+    "Dreamer": [
+      "Reaching for the impossible.",
+      "Reading the stars for answers.",
+      "Romancing the future."
+    ]
+  },
+  "S": {
+    "Creative": [
+      "Sculpting a beautiful life.",
+      "Singing your own unique song.",
+      "Styling the world with grace."
+    ],
+    "Explore": [
+      "Seeking new sights and sounds.",
+      "Sailing the seven seas of life.",
+      "Searching for the hidden gems."
+    ],
+    "Loving": [
+      "Selfless and giving always.",
+      "Supportive friend and partner.",
+      "Sweet spirit that comforts."
+    ],
+    "Dreamer": [
+      "Star-gazer with a cosmic heart.",
+      "Spinning dreams into reality.",
+      "Seeing the magic in the everyday."
+    ]
+  },
+  "T": {
+    "Creative": [
+      "Talented in ways that amaze.",
+      "Transforming the ordinary to gold.",
+      "Thinking outside the box."
+    ],
+    "Explore": [
+      "Traveling is your true passion.",
+      "Trekking through the unknown.",
+      "Taking the road less traveled."
+    ],
+    "Loving": [
+      "Trustworthy and true.",
+      "Tender heart that feels deeply.",
+      "Thoughtful in every gesture."
+    ],
+    "Dreamer": [
+      "Touching the sky with your dreams.",
+      "Thinking big and bold.",
+      "Transcending the ordinary."
+    ]
+  },
+  "U": {
+    "Creative": [
+      "Unique perspective on everything.",
+      "Unleashing your creativity.",
+      "Using your gifts to heal."
+    ],
+    "Explore": [
+      "Uncovering hidden mysteries.",
+      "Unafraid of the unknown.",
+      "Under every rock, a new discovery."
+    ],
+    "Loving": [
+      "Understanding and empathetic.",
+      "Unconditional in your love.",
+      "Uniting people with kindness."
+    ],
+    "Dreamer": [
+      "Unbound by the limits of reality.",
+      "Undeterred by the impossible.",
+      "Uplifting the world with hope."
+    ]
+  },
+  "V": {
+    "Creative": [
+      "Visualizing a better world.",
+      "Voice that needs to be heard.",
+      "Vibrant colors fill your mind."
+    ],
+    "Explore": [
+      "Venturing into the wild.",
+      "Voyaging to distant lands.",
+      "Visiting places of wonder."
+    ],
+    "Loving": [
+      "Valuing people above all else.",
+      "Virtuous and kind-hearted.",
+      "Very special friend to have."
+    ],
+    "Dreamer": [
+      "Visionary seeing the future.",
+      "Vast imagination.",
+      "Vowing to make dreams come true."
+    ]
+  },
+  "W": {
+    "Creative": [
+      "Weaving stories and dreams.",
+      "Writing your own destiny.",
+      "Working your magic on the world."
+    ],
+    "Explore": [
+      "Wandering with a purpose.",
+      "Walking paths unknown.",
+      "World traveler at heart."
+    ],
+    "Loving": [
+      "Warm-hearted and welcoming.",
+      "Wishing the best for everyone.",
+      "Wonderful presence to be around."
+    ],
+    "Dreamer": [
+      "Wishing on every star.",
+      "Wondering at the beauty of life.",
+      "Waiting for the magic to happen."
+    ]
+  },
+  "X": {
+    "Creative": [
+      "X-pressing yourself uniquely.",
+      "X-factor in every creation.",
+      "Xylophone of colors."
+    ],
+    "Explore": [
+      "X-ploring the boundaries.",
+      "X-pedition leader.",
+      "X-amining the world closely."
+    ],
+    "Loving": [
+      "Xenial and hospitable.",
+      "X-tra special care for others.",
+      "X-emplary kindness."
+    ],
+    "Dreamer": [
+      "X-panding your horizons.",
+      "X-pecting the extraordinary.",
+      "X-citing dreams of the future."
+    ]
+  },
+  "Y": {
+    "Creative": [
+      "Yearning to create beauty.",
+      "Yielding art from the soul.",
+      "Your style is unmatched."
+    ],
+    "Explore": [
+      "Yonder lies your adventure.",
+      "Yearning for the open road.",
+      "Yes to every new experience."
+    ],
+    "Loving": [
+      "You are a gift to the world.",
+      "Yielding to love and kindness.",
+      "Your heart is pure gold."
+    ],
+    "Dreamer": [
+      "Yearning for a better world.",
+      "Youthful dreams never die.",
+      "You see the magic everywhere."
+    ]
+  },
+  "Z": {
+    "Creative": [
+      "Zesty and colorful life.",
+      "Zigzagging through creative paths.",
+      "Zealous about your art."
+    ],
+    "Explore": [
+      "Zooming off to new places.",
+      "Zigzagging across the map.",
+      "Zenith of adventure."
+    ],
+    "Loving": [
+      "Zeal for helping others.",
+      "Zero judgment, only love.",
+      "Zest for making others smile."
+    ],
+    "Dreamer": [
+      "Zen-like belief in the future.",
+      "Zooming past the ordinary.",
+      "Zodiac of dreams."
+    ]
+  }
 }
