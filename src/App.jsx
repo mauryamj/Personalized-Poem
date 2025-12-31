@@ -5,6 +5,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { toPng } from 'html-to-image';
 import { motion } from 'framer-motion';
 import PartnerForm from './PartnerForm';
+import { trackPoemGeneration, trackDownload, trackPartnerClick, trackSocialClick } from './analytics';
 
 function App() {
   const theme = {
@@ -76,6 +77,9 @@ function App() {
       setIsInput('');
       e.target.blur();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Track poem generation
+      trackPoemGeneration(name);
     }
   };
 
@@ -90,6 +94,9 @@ function App() {
         link.download = 'personalized-image.png'
         link.href = dataUrl;
         link.click();
+
+        // Track download event
+        trackDownload();
       })
       .catch((err) => {
         console.error("a problem ", err);
@@ -106,7 +113,7 @@ function App() {
         {/* Header Section */}
         <div className="flex justify-between items-start mb-8">
           <div className="flex flex-col">
-            <motion.h2 className="text-4xl font-bold text-blue-500 leading-tight"
+            <motion.h2 className="text-4xl font-bold text-black-500 leading-tight"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -221,10 +228,13 @@ function App() {
               </motion.div>
 
               {/* Partner With Us Button */}
-              <div className="flex justify-center mt-8 mb-24">
+              <div className="flex justify-center mt-8 mb-24 pt-32">
                 <button
-                  onClick={() => setShowPartnerPage(true)}
-                  className="px-8 py-3 bg-black text-white font-bold rounded-xl shadow-lg transform transition hover:scale-105"
+                  onClick={() => {
+                    trackPartnerClick();
+                    setShowPartnerPage(true);
+                  }}
+                  className="px-8 py-3 bg-gray-600 text-white font-bold rounded-xl shadow-lg transform transition hover:scale-105"
                 >
                   Partner With Us
                 </button>
@@ -240,7 +250,10 @@ function App() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           className='fixed bottom-6 right-6 px-1 py-3 bg-black text-white rounded-full font-medium flex items-center justify-center gap-2 shadow-lg z-50 min-w-[140px]'
-          onClick={() => window.open("https://www.instagram.com/personalized.poetry_/?igsh=MW85azI0cnVhbmZvNA%3D%3D#", "_blank")}
+          onClick={() => {
+            trackSocialClick('instagram');
+            window.open("https://www.instagram.com/personalized.poetry_/?igsh=MW85azI0cnVhbmZvNA%3D%3D#", "_blank");
+          }}
         >
           <FaInstagram className='h-5 w-5' /> Follow Us
         </motion.button>
