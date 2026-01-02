@@ -113,7 +113,7 @@ function App() {
         {/* Header Section */}
         <div className="flex justify-between items-start mb-8">
           <div className="flex flex-col">
-            <motion.h2 className="text-4xl font-bold text-black-500 leading-tight"
+            <motion.h2 className="text-4xl font-bold text-black leading-tight"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
