@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './App.css';
 import { SparklesIcon } from '@heroicons/react/24/solid';
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaSearch } from 'react-icons/fa';
 import { toPng } from 'html-to-image';
 import { motion } from 'framer-motion';
 import PartnerForm from './PartnerForm';
+import ProductSearch from './ProductSearch';
 import { trackPoemGeneration, trackDownload, trackPartnerClick, trackSocialClick } from './analytics';
 
 function App() {
@@ -17,11 +18,12 @@ function App() {
   };
 
   const products = [
-    { id: 1, name: 'Personalized T-Shirts', image: '/bw_tshirt_sample_1766195575263.png' },
-    { id: 2, name: 'Mugs', image: '/bw_mug_sample_1766195589829.png' },
-    { id: 3, name: 'Notebooks', image: '/bw_notebook_sample_1766195605616.png' },
-    { id: 4, name: 'Gifts', image: '/bw_gift_sample_1766195618998.png' },
-    { id: 5, name: 'Art Prints', image: '/bw_art_sample_1766195634004.png' },
+    { id: 1, name: 'Tote Bag', image: '/bw_tote_sample.png' },
+    { id: 2, name: 'Personalized T-Shirts', image: '/bw_tshirt_sample_1766195575263.png' },
+    { id: 3, name: 'Mugs', image: '/bw_mug_sample_1766195589829.png' },
+    { id: 4, name: 'Notebooks', image: '/bw_notebook_sample_1766195605616.png' },
+    { id: 5, name: 'Gifts', image: '/bw_gift_sample_1766195618998.png' },
+    { id: 6, name: 'Art Prints', image: '/bw_art_sample_1766195634004.png' },
   ];
 
   const [isEntered, setIsEntered] = useState(false);
@@ -30,6 +32,7 @@ function App() {
   const [poemData, setPoemData] = useState({});
   const [poemLines, setPoemLines] = useState([]);
   const [showPartnerPage, setShowPartnerPage] = useState(false);
+  const [showSearchPage, setShowSearchPage] = useState(false);
 
 
   useEffect(() => {
@@ -107,13 +110,17 @@ function App() {
     return <PartnerForm onBack={() => setShowPartnerPage(false)} />;
   }
 
+  if (showSearchPage) {
+    return <ProductSearch onBack={() => setShowSearchPage(false)} />;
+  }
+
   return (
     <div className=''>
       <div className={`${theme.bg} p-4 h-screen w-screen overflow-auto flex flex-col`} ref={ref}>
         {/* Header Section */}
-        <div className="flex justify-between items-start mb-8">
+        <div className="flex justify-between items-start mb-6 sm:mb-8">
           <div className="flex flex-col">
-            <motion.h2 className="text-4xl font-bold text-black leading-tight"
+            <motion.h2 className="text-3xl sm:text-4xl font-bold text-black leading-tight"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -124,14 +131,14 @@ function App() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <SparklesIcon className='text-black h-8 w-8 mt-2' />
+              <SparklesIcon className='text-black h-6 w-6 sm:h-8 sm:w-8 mt-2' />
             </motion.div>
           </div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-16 h-16 rounded-full border border-black flex items-center justify-center overflow-hidden bg-white"
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-black flex items-center justify-center overflow-hidden bg-white"
           >
             <img src='/logo.png' className='w-full h-full object-contain' />
           </motion.div>
@@ -147,7 +154,7 @@ function App() {
                   exit={{ opacity: 0, x: 50 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  <p className={`p-3 text-3xl font-bold xl:text-5xl ${theme.ntitle}`}>{displayName}</p>
+                  <p className={`p-3 text-2xl sm:text-3xl xl:text-5xl font-bold ${theme.ntitle}`}>{displayName}</p>
 
                   {poemLines.map((item, index) => (
                     <p key={index} className="pl-7 text-base xl:text-2xl relative mb-3">
@@ -166,7 +173,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 50 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className='no-export fixed bottom-6 left-6 px-3 py-3 bg-black text-white rounded-full font-medium flex items-center justify-center gap-2 shadow-lg z-50 min-w-[140px]'
+                  className='no-export fixed bottom-4 sm:bottom-6 left-4 sm:left-6 px-4 py-2 sm:px-3 sm:py-3 bg-black text-white rounded-full font-medium flex items-center justify-center gap-2 shadow-lg z-50 min-w-[120px] sm:min-w-[140px] text-sm sm:text-base active:scale-95'
                   onClick={handleDownload}>
                   Download
                 </motion.button>
@@ -176,10 +183,10 @@ function App() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center mb-8 text-2xl"
+                className="text-center mb-6 sm:mb-8"
               >
-                <h3 className=" font-bold text-black mb-1">Welcome to this page.</h3>
-                <h3 className=" font-bold text-gray-600">Search for your name</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-black mb-1">Welcome to this page.</h3>
+                <h3 className="text-lg sm:text-2xl font-bold text-gray-600">Search for your name</h3>
               </motion.div>
             )}
           </div>
@@ -191,10 +198,10 @@ function App() {
             className="flex flex-col items-center w-full gap-4"
           >
 
-            <div className="pb-32 w-full flex justify-center mt-1">
+            <div className="pb-24 sm:pb-32 w-full flex justify-center mt-1">
               <input
                 type="text"
-                className="h-12 w-full max-w-xs rounded-full bg-white px-6 text-center text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-black placeholder-gray-400 text-black no-export border border-gray-100"
+                className="h-11 sm:h-12 w-full max-w-xs rounded-full bg-white px-5 sm:px-6 text-center text-base sm:text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-black placeholder-gray-400 text-black no-export border border-gray-100"
                 placeholder="Enter the name"
                 value={isInput}
                 onChange={(e) => setIsInput(e.target.value)}
@@ -208,33 +215,43 @@ function App() {
         <div className='flex justify-center w-full'>
           {isEntered ? <p></p> :
             <div className="w-full">
-              {/* Merchandized Section - Horizontal Scroll */}
+              {/* Personalized Merchandise Section */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className='w-full'
               >
-                <div className="flex overflow-x-auto gap-4 pb-8 px-2 snap-x hide-scrollbar">
+                <div className="flex items-center justify-between mb-3 sm:mb-4 px-2">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black">Personalized Merchandise</h3>
+                  <button
+                    onClick={() => setShowSearchPage(true)}
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors active:scale-95"
+                    aria-label="Search products"
+                  >
+                    <FaSearch className="text-black w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                </div>
+                <div className="flex overflow-x-auto gap-3 sm:gap-4 pb-6 sm:pb-8 px-2 snap-x hide-scrollbar">
                   {products.map((product) => (
-                    <div key={product.id} className="flex-shrink-0 w-32 md:w-40 bg-white p-3 rounded-xl shadow-md flex flex-col items-center snap-center">
-                      <div className="w-full aspect-square bg-gray-200 rounded-lg mb-2 overflow-hidden">
+                    <div key={product.id} className="flex-shrink-0 w-28 sm:w-32 md:w-40 bg-white p-2 sm:p-3 rounded-xl shadow-md flex flex-col items-center snap-center">
+                      <div className="w-full aspect-square bg-gray-200 rounded-lg mb-1.5 sm:mb-2 overflow-hidden">
                         <img src={product.image} alt={product.name} className="w-full h-full object-cover opacity-60" />
                       </div>
-                      <h3 className="font-bold text-xs md:text-sm text-center leading-tight">{product.name}</h3>
+                      <h3 className="font-bold text-[10px] sm:text-xs md:text-sm text-center leading-tight">{product.name}</h3>
                     </div>
                   ))}
                 </div>
               </motion.div>
 
               {/* Partner With Us Button */}
-              <div className="flex justify-center mt-8 mb-24 pt-32">
+              <div className="flex justify-center mt-6 sm:mt-8 mb-20 sm:mb-24">
                 <button
                   onClick={() => {
                     trackPartnerClick();
                     setShowPartnerPage(true);
                   }}
-                  className="px-8 py-3 bg-gray-600 text-white font-bold rounded-xl shadow-lg transform transition hover:scale-105"
+                  className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gray-600 text-white font-bold rounded-xl shadow-lg transform transition hover:scale-105 active:scale-95 text-sm sm:text-base"
                 >
                   Partner With Us
                 </button>
@@ -249,13 +266,13 @@ function App() {
         <motion.button
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className='fixed bottom-6 right-6 px-1 py-3 bg-black text-white rounded-full font-medium flex items-center justify-center gap-2 shadow-lg z-50 min-w-[140px]'
+          className='fixed bottom-4 sm:bottom-6 right-4 sm:right-6 px-3 sm:px-1 py-2 sm:py-3 bg-black text-white rounded-full font-medium flex items-center justify-center gap-2 shadow-lg z-50 min-w-[120px] sm:min-w-[140px] text-sm sm:text-base active:scale-95'
           onClick={() => {
             trackSocialClick('instagram');
             window.open("https://www.instagram.com/personalized.poetry_/?igsh=MW85azI0cnVhbmZvNA%3D%3D#", "_blank");
           }}
         >
-          <FaInstagram className='h-5 w-5' /> Follow Us
+          <FaInstagram className='h-4 w-4 sm:h-5 sm:w-5' /> Follow Us
         </motion.button>
       </motion.div>
     </div>

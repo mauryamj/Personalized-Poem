@@ -6,9 +6,25 @@ function PartnerForm({ onBack }) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        businessName: '',
         businessType: '',
-        message: ''
+        message: '',
+        iconFile: null
     });
+
+    const [iconPreview, setIconPreview] = useState(null);
+
+    const handleIconUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setFormData({ ...formData, iconFile: file });
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setIconPreview(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -60,22 +76,61 @@ function PartnerForm({ onBack }) {
                     </div>
 
                     <div>
+                        <label className="block text-sm font-medium text-black mb-1">Business Name</label>
+                        <input
+                            required
+                            type="text"
+                            className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                            placeholder="e.g. ABC Cafe"
+                            value={formData.businessName}
+                            onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                        />
+                    </div>
+
+                    <div>
                         <label className="block text-sm font-medium text-black mb-1">Business Type</label>
                         <select
-                            className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all bg-white"
+                            className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all bg-white text-black"
                             value={formData.businessType}
                             onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
                         >
-                            <option value="">Select an option</option>
-                            <option value="retail">Retail Store</option>
-                            <option value="corporate">Corporate Gifting</option>
-                            <option value="influencer">Influencer / Creator</option>
-                            <option value="other">Other</option>
+                            <option value="" className="text-gray-400">Select an option</option>
+                            <option value="cafe" className="text-black">Cafe</option>
+                            <option value="hotel" className="text-black">Hotels</option>
+                            <option value="other" className="text-black">Others</option>
                         </select>
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-black mb-1">Tell us more</label>
+                        <label className="block text-sm font-medium text-black mb-1">Upload Icon / Logo</label>
+                        <div className="w-full">
+                            <label htmlFor="icon-upload" className="cursor-pointer flex items-center justify-center w-full h-32 px-4 rounded-xl border-2 border-dashed border-gray-300 hover:border-black transition-all bg-gray-50 hover:bg-gray-100">
+                                {iconPreview ? (
+                                    <div className="flex flex-col items-center gap-2">
+                                        <img src={iconPreview} alt="Icon preview" className="w-16 h-16 object-contain" />
+                                        <span className="text-sm text-gray-600">Click to change</span>
+                                    </div>
+                                ) : (
+                                    <div className="flex flex-col items-center gap-2">
+                                        <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                        </svg>
+                                        <span className="text-sm text-gray-600">Click to upload icon or logo</span>
+                                    </div>
+                                )}
+                            </label>
+                            <input
+                                id="icon-upload"
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={handleIconUpload}
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-black mb-1">Tell us about your product</label>
                         <textarea
                             className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all min-h-[120px]"
                             placeholder="How would you like to partner with us?"
