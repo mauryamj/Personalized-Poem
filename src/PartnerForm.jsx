@@ -4,32 +4,52 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 function PartnerForm({ onBack }) {
     const [formData, setFormData] = useState({
-        name: '',
+        fullName: '',
         email: '',
         businessName: '',
         businessType: '',
-        message: '',
-        iconFile: null
+        logo: '',
+        productDescription: '',
+        partnershipInterest: ''
     });
 
-    const [iconPreview, setIconPreview] = useState(null);
-
-    const handleIconUpload = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setFormData({ ...formData, iconFile: file });
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setIconPreview(reader.result);
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('Thank you for your interest! We will get back to you soon.');
-        onBack();
+        try {
+            console.log("Submitting form data:", formData); // Log data being sent
+
+            const response = await fetch('/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            console.log("Response status:", response.status); // Log status code
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log("Success result:", result);
+                alert('Thank you for your interest! We will get back to you soon.');
+                onBack();
+            } else {
+                // Try to get error details from the server
+                const errorData = await response.text();
+                console.error("Server error response:", errorData);
+
+                // Try to parse JSON error if possible
+                try {
+                    const jsonError = JSON.parse(errorData);
+                    alert(`Failed to submit: ${jsonError.message || jsonError.error || 'Unknown server error'}`);
+                } catch (e) {
+                    alert(`Failed to submit (Status ${response.status}): ${errorData}`);
+                }
+            }
+        } catch (error) {
+            console.error('Network or execution error:', error);
+            alert(`Error: ${error.message}. Check console for details.`);
+        }
     };
 
     return (
@@ -58,8 +78,8 @@ function PartnerForm({ onBack }) {
                             type="text"
                             className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                             placeholder="e.g. John Doe"
-                            value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            value={formData.fullName}
+                            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         />
                     </div>
 
@@ -102,40 +122,36 @@ function PartnerForm({ onBack }) {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-black mb-1">Upload Icon / Logo</label>
-                        <div className="w-full">
-                            <label htmlFor="icon-upload" className="cursor-pointer flex items-center justify-center w-full h-32 px-4 rounded-xl border-2 border-dashed border-gray-300 hover:border-black transition-all bg-gray-50 hover:bg-gray-100">
-                                {iconPreview ? (
-                                    <div className="flex flex-col items-center gap-2">
-                                        <img src={iconPreview} alt="Icon preview" className="w-16 h-16 object-contain" />
-                                        <span className="text-sm text-gray-600">Click to change</span>
-                                    </div>
-                                ) : (
-                                    <div className="flex flex-col items-center gap-2">
-                                        <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                                        </svg>
-                                        <span className="text-sm text-gray-600">Click to upload icon or logo</span>
-                                    </div>
-                                )}
-                            </label>
-                            <input
-                                id="icon-upload"
-                                type="file"
-                                accept="image/*"
-                                className="hidden"
-                                onChange={handleIconUpload}
-                            />
-                        </div>
+                        <label className="block text-sm font-medium text-black mb-1">Logo URL</label>
+                        <input
+                            type="url"
+                            className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                            placeholder="https://example.com/logo.png"
+                            value={formData.logo}
+                            onChange={(e) => setFormData({ ...formData, logo: e.target.value })}
+                        />
+                        <p className="text-xs text-gray-500 mt-1">
+                            Tip: You can upload your image to a service like Imgur or Cloudinary and paste the link here.
+                        </p>
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-black mb-1">Tell us about your product</label>
+                        <label className="block text-sm font-medium text-black mb-1">Product Description</label>
                         <textarea
-                            className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all min-h-[120px]"
+                            className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all min-h-[100px]"
+                            placeholder="Tell us about your product..."
+                            value={formData.productDescription}
+                            onChange={(e) => setFormData({ ...formData, productDescription: e.target.value })}
+                        ></textarea>
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-black mb-1">Partnership Interest</label>
+                        <textarea
+                            className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all min-h-[100px]"
                             placeholder="How would you like to partner with us?"
-                            value={formData.message}
-                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                            value={formData.partnershipInterest}
+                            onChange={(e) => setFormData({ ...formData, partnershipInterest: e.target.value })}
                         ></textarea>
                     </div>
 

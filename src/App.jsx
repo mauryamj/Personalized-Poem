@@ -35,12 +35,53 @@ function App() {
   const [showSearchPage, setShowSearchPage] = useState(false);
 
 
+  const [currentUser, setCurrentUser] = useState(null);
+  const [showLogin, setShowLogin] = useState(false);
+  const [loginEmail, setLoginEmail] = useState('');
+
   useEffect(() => {
+    // Check for logged in user
+    const storedUser = localStorage.getItem('partnerUser');
+    if (storedUser) {
+      setCurrentUser(JSON.parse(storedUser));
+    }
+
     fetch('/list.json')
       .then((res) => res.json())
       .then((data) => setPoemData(data))
       .catch((err) => console.error("error on json", err));
   }, []);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!loginEmail) return;
+
+    try {
+      const response = await fetch('/api/users');
+      const users = await response.json();
+      const user = users.find(u => u.email.toLowerCase() === loginEmail.toLowerCase());
+
+      if (user) {
+        setCurrentUser(user);
+        setShowLogin(false);
+        setLoginEmail('');
+        localStorage.setItem('partnerUser', JSON.stringify(user));
+        alert(`Welcome back, ${user.businessName}!`);
+      } else {
+        alert('User not found. Please check your email or partner with us first.');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('Login failed. Please try again.');
+    }
+  };
+
+  const handleLogout = () => {
+    if (window.confirm('Are you sure you want to logout?')) {
+      setCurrentUser(null);
+      localStorage.removeItem('partnerUser');
+    }
+  };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -118,13 +159,21 @@ function App() {
     <div className=''>
       <div className={`${theme.bg} p-4 h-screen w-screen overflow-auto flex flex-col`} ref={ref}>
         {/* Header Section */}
-        <div className="flex justify-between items-start mb-6 sm:mb-8">
+        <div className="flex justify-between items-start mb-6 sm:mb-8 relative">
+          {/* Login/Logout Button */}
+          <button
+            onClick={() => currentUser ? handleLogout() : setShowLogin(true)}
+            className="absolute top-0 right-20 text-xs font-bold underline hover:text-gray-600 no-export"
+          >
+            {currentUser ? 'Logout' : 'Partner Login'}
+          </button>
+
           <div className="flex flex-col">
             <motion.h2 className="text-3xl sm:text-4xl font-bold text-black leading-tight"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              Personalized <br /> Poetry
+              {currentUser ? currentUser.businessName : <>Personalized <br /> Poetry</>}
             </motion.h2>
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
@@ -138,11 +187,49 @@ function App() {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-black flex items-center justify-center overflow-hidden bg-white"
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-black flex items-center justify-center overflow-hidden bg-white cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => {
+              if (!currentUser) setShowLogin(true);
+            }}
           >
-            <img src='/logo.png' className='w-full h-full object-contain' />
+            <img src={currentUser ? currentUser.logo : '/logo.png'} className='w-full h-full object-contain' />
           </motion.div>
         </div>
+
+        {/* Login Modal */}
+        {showLogin && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 no-export">
+            <div className="bg-white p-6 rounded-xl shadow-xl w-full max-w-sm">
+              <h3 className="text-xl font-bold mb-4">Partner Login</h3>
+              <p className="mb-4 text-sm text-gray-600">Enter your email to access your branded page.</p>
+              <form onSubmit={handleLogin} className="flex flex-col gap-4">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-black"
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
+                  required
+                />
+                <div className="flex gap-2 justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setShowLogin(false)}
+                    className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 text-sm bg-black text-white rounded-lg hover:bg-gray-800"
+                  >
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
 
         <div className='xl:flex xl:flex-wrap xl:gap-5 xl:pl-10 '>
           <div>
@@ -278,5 +365,6 @@ function App() {
     </div>
   )
 }
+
 
 export default App
