@@ -1,0 +1,5 @@
+# API Proxy to Render Backend
+/api/*  https://mongo-api-z1hk.onrender.com/api/:splat  200
+
+# SPA Catch-all (must be after specific rules)
+/*  /index.html  200
