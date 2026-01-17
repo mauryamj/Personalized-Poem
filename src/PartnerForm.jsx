@@ -16,17 +16,26 @@ function PartnerForm({ onBack }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            console.log("Submitting form data:", formData); // Log data being sent
+            const submitData = new FormData();
+            submitData.append('fullName', formData.fullName);
+            submitData.append('email', formData.email);
+            submitData.append('businessName', formData.businessName);
+            submitData.append('businessType', formData.businessType);
+            submitData.append('productDescription', formData.productDescription);
+            submitData.append('partnershipInterest', formData.partnershipInterest);
+
+            if (formData.logo) {
+                submitData.append('logo', formData.logo);
+            }
+
+            console.log("Submitting form data...");
 
             const response = await fetch('/api/users', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+                body: submitData,
             });
 
-            console.log("Response status:", response.status); // Log status code
+            console.log("Response status:", response.status);
 
             if (response.ok) {
                 const result = await response.json();
@@ -34,11 +43,8 @@ function PartnerForm({ onBack }) {
                 alert('Thank you for your interest! We will get back to you soon.');
                 onBack();
             } else {
-                // Try to get error details from the server
                 const errorData = await response.text();
                 console.error("Server error response:", errorData);
-
-                // Try to parse JSON error if possible
                 try {
                     const jsonError = JSON.parse(errorData);
                     alert(`Failed to submit: ${jsonError.message || jsonError.error || 'Unknown server error'}`);
@@ -122,17 +128,14 @@ function PartnerForm({ onBack }) {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-black mb-1">Logo URL</label>
+                        <label className="block text-sm font-medium text-black mb-1">Or Upload Logo</label>
                         <input
-                            type="url"
-                            className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
-                            placeholder="https://example.com/logo.png"
-                            value={formData.logo}
-                            onChange={(e) => setFormData({ ...formData, logo: e.target.value })}
+                            type="file"
+                            accept="image/*"
+                            className="w-full py-2 px-1 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-black hover:file:bg-gray-200 focus:outline-none"
+                            onChange={(e) => setFormData({ ...formData, logo: e.target.files[0] })}
                         />
-                        <p className="text-xs text-gray-500 mt-1">
-                            Tip: You can upload your image to a service like Imgur or Cloudinary and paste the link here.
-                        </p>
+                        <p className="text-xs text-gray-400 mt-1">Upload an image file (PNG, JPG).</p>
                     </div>
 
                     <div>
