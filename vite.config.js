@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://mongo-api-z1hk.onrender.com',
+        target: 'https://mongo-ecyxiqevg-mauryas-projects-f2e2c192.vercel.app',
         changeOrigin: true,
         secure: false,
       },
