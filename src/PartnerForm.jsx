@@ -16,23 +16,34 @@ function PartnerForm({ onBack }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const submitData = new FormData();
-            submitData.append('fullName', formData.fullName);
-            submitData.append('email', formData.email);
-            submitData.append('businessName', formData.businessName);
-            submitData.append('businessType', formData.businessType);
-            submitData.append('productDescription', formData.productDescription);
-            submitData.append('partnershipInterest', formData.partnershipInterest);
-
-            if (formData.logo) {
-                submitData.append('logo', formData.logo);
+            let logoBase64 = '';
+            if (formData.logo && formData.logo instanceof File) {
+                logoBase64 = await new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(formData.logo);
+                    reader.onload = () => resolve(reader.result);
+                    reader.onerror = error => reject(error);
+                });
             }
 
-            console.log("Submitting form data...");
+            const submitData = {
+                fullName: formData.fullName,
+                email: formData.email,
+                businessName: formData.businessName,
+                businessType: formData.businessType,
+                productDescription: formData.productDescription,
+                partnershipInterest: formData.partnershipInterest,
+                logo: logoBase64 // Send Base64 string directly
+            };
+
+            console.log("Submitting form data (JSON)...");
 
             const response = await fetch('/api/users', {
                 method: 'POST',
-                body: submitData,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(submitData),
             });
 
             console.log("Response status:", response.status);
