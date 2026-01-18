@@ -13,17 +13,39 @@ function PartnerForm({ onBack }) {
         partnershipInterest: ''
     });
 
+    const uploadToImgBB = async (imageFile) => {
+        const formData = new FormData();
+        formData.append('image', imageFile);
+
+        // REPLACE WITH YOUR IMGBB API KEY
+        const API_KEY = 'YOUR_IMGBB_API_KEY';
+
+        const response = await fetch(`https://api.imgbb.com/1/upload?key=${API_KEY}`, {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to upload image to ImgBB');
+        }
+
+        const data = await response.json();
+        return data.data.url;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            let logoBase64 = '';
+            let logoUrl = '';
             if (formData.logo && formData.logo instanceof File) {
-                logoBase64 = await new Promise((resolve, reject) => {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(formData.logo);
-                    reader.onload = () => resolve(reader.result);
-                    reader.onerror = error => reject(error);
-                });
+                console.log("Uploading image to ImgBB...");
+                try {
+                    logoUrl = await uploadToImgBB(formData.logo);
+                    console.log("Image uploaded to:", logoUrl);
+                } catch (uploadError) {
+                    alert(`Image upload failed: ${uploadError.message}. Please check your API Key.`);
+                    return;
+                }
             }
 
             const submitData = {
@@ -33,10 +55,10 @@ function PartnerForm({ onBack }) {
                 businessType: formData.businessType,
                 productDescription: formData.productDescription,
                 partnershipInterest: formData.partnershipInterest,
-                logo: logoBase64 // Send Base64 string directly
+                logo: logoUrl
             };
 
-            console.log("Submitting form data (JSON)...");
+            console.log("Submitting form data (JSON) to Backend...");
 
             const response = await fetch('/api/users', {
                 method: 'POST',
