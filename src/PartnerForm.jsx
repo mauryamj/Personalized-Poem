@@ -18,7 +18,8 @@ function PartnerForm({ onBack }) {
         formData.append('image', imageFile);
 
         // REPLACE WITH YOUR IMGBB API KEY
-        const API_KEY = 'YOUR_IMGBB_API_KEY';
+        // Get your key here: https://api.imgbb.com/
+        const API_KEY = 'c53bd0ab276975bbedcd57e82f7669c2';
 
         const response = await fetch(`https://api.imgbb.com/1/upload?key=${API_KEY}`, {
             method: 'POST',
