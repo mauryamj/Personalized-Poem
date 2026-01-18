@@ -161,36 +161,11 @@ function App() {
         {/* Header Section */}
         <div className="flex justify-between items-start mb-6 sm:mb-8 relative">
           {/* Login/Logout Button */}
-          <button
-            onClick={() => currentUser ? handleLogout() : setShowLogin(true)}
-            className="absolute top-0 right-20 text-xs font-bold underline hover:text-gray-600 no-export"
-          >
-            {currentUser ? 'Logout' : 'Partner Login'}
-          </button>
-
-          <div className="flex flex-col">
-            <motion.h2 className="text-3xl sm:text-4xl font-bold text-black leading-tight"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              {currentUser ? currentUser.businessName : <>Personalized <br /> Poetry</>}
-            </motion.h2>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <SparklesIcon className='text-black h-6 w-6 sm:h-8 sm:w-8 mt-2' />
-            </motion.div>
-          </div>
-
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-black flex items-center justify-center overflow-hidden bg-white cursor-pointer hover:opacity-80 transition-opacity"
-            onClick={() => {
-              if (!currentUser) setShowLogin(true);
-            }}
+            onClick={() => currentUser ? handleLogout() : setShowLogin(true)}
           >
             <img src={currentUser ? currentUser.logo : '/logo.png'} className='w-full h-full object-contain' />
           </motion.div>
