@@ -128,7 +128,7 @@ function PartnerForm({ onBack }) {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-black mb-1">Or Upload Logo</label>
+                        <label className="block text-sm font-medium text-black mb-1"> Upload Logo</label>
                         <input
                             type="file"
                             accept="image/*"
